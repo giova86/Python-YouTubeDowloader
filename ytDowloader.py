@@ -1,22 +1,5 @@
-# from pytube import YouTube
-#
-# url = "https://www.youtube.com/watch?v=rJNBGqiBI7s"
-# my_video = YouTube(url)
-#
-# print(my_video.title)
-#
-# print("Choose A Resolution Please")
-# for stream in my_video.streams:
-#     print(stream.resolution)
-#
-# my_video = my_video.streams.get_highest_resolution()
-#
-# my_video.download()
-#
-
-#
-#
 from pytube import YouTube
+import os
 
 def download(video_resolutions, videos):
     while True:
@@ -27,17 +10,19 @@ def download(video_resolutions, videos):
             i += 1
 
         # To Download the video with the users Choice of resolution
-        choice = int(input('\nSelect A Resolution Please: '))
+        choice = int(input('\nSelect a resolution please: '))
+        print('---------------------------------------')
 
         # To validate if the user enters a number displayed on the screen...
-        if 1 <= choice < i:
+        if (choice < i) or (choice >=1):
             resolution_to_download = video_resolutions[choice - 1]
             print(f"\nYou're now downloading the video with resolution {resolution_to_download.resolution}...")
 
             # command for downloading the video
-            videos[choice - 1].download()
+            videos[choice - 1].download(os.path.expanduser('~'))
 
             print("\nVideo was successfully downloaded!")
+            print(f"\nFind your video here: {os.path.expanduser('~')}")
             break
 
         else:
