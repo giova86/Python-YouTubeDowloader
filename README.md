@@ -19,7 +19,7 @@ source venv/activate/bin
 pip install -r requirements.txt
 ```
 
-## Run and optional arguments
+## Run
 
 ```
 python ytDowloader.py
