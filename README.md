@@ -6,6 +6,13 @@ This code allows to download one or more video from YouTube.
 
 This code is tested to work with Python 3.9.
 
+## Virtual Environment
+
+```
+python3.9 -m venv venv
+source venv/activate/bin
+```
+
 ## Requirements
 
 ```
